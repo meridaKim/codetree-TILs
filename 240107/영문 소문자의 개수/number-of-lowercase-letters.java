@@ -9,10 +9,10 @@ public class Main {
         TreeMap<Character, Integer> map = new TreeMap<>();
         for(int i =0; i<n; i++){
             char a = st.nextToken().charAt(0);
-            if(Character.isUpperCase(a)){
-                continue;
-            }
-            map.put(a,1);
+            if(Character.isLowerCase(a)){
+                map.put(a,map.getOrDefault(a,0)+1);
+            }else break;
+            
         }
         for(char key : map.keySet()){
             System.out.println(key +" : "+map.get(key));
