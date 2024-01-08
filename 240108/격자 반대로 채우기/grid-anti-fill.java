@@ -6,7 +6,26 @@ public class Main {
         int [][] arr = new int [n][n];
         int count =1;
         int j =0;
-        for(int i =n-1; i>=0; i--){
+        if(n%2==1){
+for(int i =n-1; i>=0; i--){
+            if(i%2==0){
+                j=n-1;
+                while(j>=0){
+                    arr[j][i] =count;
+                    j--;
+                    count++;
+                }
+            }else{
+                j=0;
+                while(j<n){
+                    arr[j][i] = count;
+                    j++;
+                    count++;
+                }
+            }  
+        }
+        }else{
+for(int i =n-1; i>=0; i--){
             if(i%2==1){
                 j=n-1;
                 while(j>=0){
@@ -23,6 +42,8 @@ public class Main {
                 }
             }  
         }
+        }
+        
         for(int i =0; i<n; i++){
             for(int k =0; k<n; k++){
                 System.out.print(arr[i][k]+" ");
