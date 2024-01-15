@@ -1,25 +1,39 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        StringTokenizer st;
-        int [] []arr = new int [n][2];
-        for(int i =0; i<n; i++){
-          st  = new StringTokenizer(br.readLine());
-          arr[i][0] = Integer.parseInt(st.nextToken());
-          arr[i][1] = Integer.parseInt(st.nextToken());
+    public static final int INT_MAX = Integer.MAX_VALUE;
+    public static final int MAX_N = 100;
+    
+    public static int n;
+    public static int[] x = new int[MAX_N];
+    public static int[] y = new int[MAX_N];
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // 변수 선언 및 입력
+        n = sc.nextInt();
+        for(int i = 0; i < n; i++) {
+            x[i] = sc.nextInt();
+            y[i] = sc.nextInt();
         }
-        int sx = arr[0][0];
-        int sy = arr[0][1];
-        int ex = arr[arr.length-1][0];
-        int ey = arr[arr.length-1][1];
-        int pathMin = Integer.MAX_VALUE;
-        for(int i =1; i<n-1; i++){
-                pathMin = Math.min(pathMin,Math.abs(arr[i][0]-sx) + Math.abs(arr[i][1]-sy)+Math.abs(arr[i][0]-ex)+Math.abs(arr[i][1]-ey));
+        
+        // 각 i번째 체크포인트를 건너 뛰었을 때의 거리를 구해줍니다.
+        int ans = INT_MAX;
+        for(int i = 1; i < n - 1; i++) {
+            // 거리를 구합니다.
+            int dist = 0;
+            int prevIdx = 0;
+            for(int j = 1; j < n; j++) {
+                if(j == i) continue;
+                dist += Math.abs(x[prevIdx] - x[j]) + Math.abs(y[prevIdx] - y[j]);
+                prevIdx = j;
+            }
             
+            // 가능한 거리 중 최솟값을 구해줍니다.
+            ans = Math.min(ans, dist);
         }
-        System.out.print(pathMin);
+        
+        // 출력
+        System.out.print(ans);
     }
 }
