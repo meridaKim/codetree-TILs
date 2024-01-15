@@ -20,7 +20,7 @@ public class Main {
         if(m>0){
             wifi = n/(m*2+1)+n%(m*2+1);
         }
-        wifi = n-zero;
+        else wifi = n-zero;
         
         System.out.print(wifi);
 
