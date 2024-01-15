@@ -1,33 +1,35 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) throws IOException{
-     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        st =new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-        String [][] arr = new String [N][M];
-        for(int i = 0; i<N; i++){
-            st =new StringTokenizer(br.readLine());
-            for(int j =0; j<M; j++){
-                arr[i][j] = st.nextToken();
+    public static final int MAX_N = 15;
+
+    public static int n, m;
+    public static char[][] grid = new char[MAX_N][MAX_N];
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 입력
+        n = sc.nextInt();
+        m = sc.nextInt();
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < m; j++) {
+                grid[i][j] = sc.next().charAt(0);
             }
-        }
-        int count=0;
-        for(int i = 0; i<N-1; i++){
-            for(int j =0; j<M-1; j++){
-                    for(int k=i+1; k<N-1; k++){
-                        for(int l=j+1; l<M-1; l++){
-                                    if(!arr[i][j].equals(arr[k][l])&&!arr[k][l].equals(arr[N-1][M-1])){
-                                        count++;
-                                    }
-                        }
-                        
-                    }
-                }
-            }
-            System.out.print(count);
-        }
+
+        // 이동 시에 행과 열이 전부 증가하도록
+        // 모든 쌍을 다 잡아봅니다.
+        int cnt = 0;
+        for(int i = 1; i < n; i++)
+            for(int j = 1; j < m; j++)
+                for(int k = i + 1; k < n - 1; k++)
+                    for(int l = j + 1; l < m - 1; l++)
+                        // 그 중 색깔이 전부 달라지는 경우에만 개수를 세줍니다.
+                        if(grid[0][0] != grid[i][j] && 
+                           grid[i][j] != grid[k][l] &&
+                           grid[k][l] != grid[n - 1][m - 1])
+                            cnt++;
         
+        System.out.println(cnt);
     }
+}
