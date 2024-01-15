@@ -12,15 +12,14 @@ public class Main {
         int zero =0;
         for(int i =0; i<n; i++){
             arr[i]=Integer.parseInt(st.nextToken());
-            if(arr[i]==0){
-                zero++;
-            }
         }
         int wifi =0;
-        if(m>0){
-            wifi = n/(m*2+1)+n%(m*2+1);
+        for(int i =0; i<n; i++){
+            if(arr[i]==1){
+                wifi++;
+                i+= 2*m;
+            }
         }
-        else wifi = n-zero;
         
         System.out.print(wifi);
 
