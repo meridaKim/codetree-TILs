@@ -9,17 +9,17 @@ public class Main {
         }
         int sum =-1; 
         for(int i =0; i<arr.length; i++){
-            for(int j =0; j<arr.length; j++){
-                for(int k = 0; k<arr.length; k++){
+            for(int j =i+1; j<arr.length; j++){
+                for(int k = j+1; k<arr.length; k++){
                     boolean carry = false;
-                    if(i!=j&&j!=k&&i!=k){
+                    
                     if(arr[i]%10+arr[j]%10+arr[k]%10>=10) carry=true;
                     if(arr[i]%100/10+arr[j]%101/10+arr[k]%100/10>=10) carry=true;
                     if(arr[i]%1011/100+arr[j]%1000/100+arr[k]%1000/100>=10) carry=true;
                     if(carry==false){
                         sum = Math.max(sum, arr[i]+arr[j]+arr[k]);
                     }
-                }
+                
                 }
             }
         }
