@@ -13,9 +13,12 @@ public class Main {
        }
        int maxCount = Integer.MIN_VALUE;
        for(int i=0; i<n; i++){
-        for(int k=i+1; k<n; k++){
+        for(int k=0; k<n; k++){
             for(int j =0; j<n-2; j++){
-            maxCount = Math.max(maxCount,arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[k][j]+arr[k][j+1]+arr[k][j+2]);
+                if(i!=k){
+                    maxCount = Math.max(maxCount,arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[k][j]+arr[k][j+1]+arr[k][j+2]);
+                }
+                
         }
         }
         
