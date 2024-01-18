@@ -18,11 +18,11 @@ public class Main {
         int count;
         int min = Integer.MAX_VALUE;
         for(int i=0; i<n; i++){
-            for(int j =i+t; j<n; j++){
+            for(int j =i+t-1; j<n; j++){
                 sum=0;
                 count=0;
                for(int k =i; k<=j; k++){
-                    if(count>=t){
+                    if(count==t){
                         break;
                     }
                     if(arr[k]==h){
