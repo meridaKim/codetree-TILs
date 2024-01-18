@@ -17,15 +17,16 @@ public class Main {
         int count;
         for(int i=0; i<end+1; i++){
             count=0;
-            for(int j = i; j<end+1; j++){
+            for(int j = i+1; j<end+1; j++){
                 if(arr[j]=='G'){
                     count++;
                 }if(arr[j]=='H'){
                     count--;
                 }if(count==0) {
-                    max = Math.max(j-i+1,max);
+                    max = Math.max(j-i,max);
                     break;}
             }
+            if(count!=0) max = 0;
         }
         System.out.print(max);
 
