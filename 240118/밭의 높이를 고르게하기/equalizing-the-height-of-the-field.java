@@ -22,7 +22,7 @@ public class Main {
                 sum=0;
                 count=0;
                for(int k =i; k<=j; k++){
-                    if(count>=3){
+                    if(count>=t){
                         break;
                     }
                     if(arr[k]==h){
