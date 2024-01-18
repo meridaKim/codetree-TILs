@@ -11,7 +11,7 @@ public class Main {
         int [] arr = list.stream().mapToInt(i->i).toArray();
         int diff= Integer.MAX_VALUE;
         for(int i=0; i<arr.length; i++){
-            for(int j =i; j<arr.length; j++){
+            for(int j =i+1; j<arr.length; j++){
                 diff = Math.min(diff, makeTeam(i,j,arr));
             }
         }
