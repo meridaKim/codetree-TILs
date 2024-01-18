@@ -18,7 +18,7 @@ public class Main {
        }
        int sum;
        int max = 0;
-      for(int i= 0; i<=end; i++){
+      for(int i= 0; i<arr.length; i++){
         sum=0;
             for(int j =i-k; j<=i+k; j++){
                 if(i-k>=0&&i+k<=100){
