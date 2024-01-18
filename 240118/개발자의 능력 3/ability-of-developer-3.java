@@ -12,17 +12,20 @@ public class Main {
         int diff= Integer.MAX_VALUE;
         for(int i=0; i<arr.length; i++){
             for(int j =i+1; j<arr.length; j++){
-                diff = Math.min(diff, makeTeam(i,j,arr));
+                for(int k=j+1; k<arr.length; k++){
+                    diff = Math.min(diff, makeTeam(i,j,k,arr));
+                }
+                
             }
         }
         System.out.print(diff);
         
     }
-    public static int makeTeam(int i , int j, int [] arr){
-        int sum1 = arr[i]+arr[j];
+    public static int makeTeam(int i , int j, int k ,int [] arr){
+        int sum1 = arr[i]+arr[j]+arr[k];
         int sum2 =0;
-        for(int k=0; k<arr.length; k++){
-            sum2+=arr[k];
+        for(int l=0; l<arr.length; l++){
+            sum2+=arr[l];
         }
         sum2 = sum2-sum1;
         return Math.abs(sum1-sum2);
