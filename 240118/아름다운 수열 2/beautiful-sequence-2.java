@@ -24,7 +24,7 @@ public class Main {
                 ArrayList<Integer> tmp = new ArrayList<>();
                 count=0;
                 for(int k = i; k<=j; k++){
-                    if(j-i+1==3){
+                    if(j-i+1==m){
                         tmp.add(arr[k]);
                     }
                     
@@ -33,7 +33,7 @@ public class Main {
                 Collections.sort(tmp);
                 Collections.sort(list);
                 boolean isExist = true;
-                for(int l =0; l<3; l++){
+                for(int l =0; l<m; l++){
                     if(tmp.get(l)!=list.get(l)) {
                         isExist=false;
                         break;
