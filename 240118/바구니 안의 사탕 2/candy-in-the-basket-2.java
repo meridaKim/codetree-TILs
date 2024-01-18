@@ -20,12 +20,13 @@ public class Main {
        int max = 0;
       for(int i= 0; i<=end; i++){
         sum=0;
-        if(i-k>=0&&i+k<=100){
             for(int j =i-k; j<=i+k; j++){
-                sum+=arr[j];
+                if(i-k>=0&&i+k<=100){
+                    sum+=arr[j];
+                }
             }
             max = Math.max(sum,max);
-        }
+        
       }
        System.out.print(max);
     }
