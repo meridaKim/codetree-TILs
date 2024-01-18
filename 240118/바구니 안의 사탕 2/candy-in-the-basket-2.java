@@ -14,18 +14,18 @@ public class Main {
          int candy = Integer.parseInt(st.nextToken());
          int location = Integer.parseInt(st.nextToken());
          end = Math.max(end, location);
-         arr[location] = candy;
+         arr[location] += candy;
        }
        int sum;
        int max = 0;
-      for(int i= 0; i<arr.length; i++){
+      for(int i= 0; i<end; i++){
         sum=0;
-        for(int j =i-k; j<=i+k; j++){
-            if(j>=0&&j<=100){
-             sum+=arr[j];
-        }
+        if(i-k>=0&&i+k<=100){
+            for(int j =i-k; j<=i+k; j++){
+                sum+=arr[j];
             }
-        max = Math.max(sum,max);
+            max = Math.max(sum,max);
+        }
       }
        System.out.print(max);
     }
