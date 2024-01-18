@@ -21,7 +21,7 @@ public class Main {
       for(int i= 0; i<arr.length; i++){
         sum=0;
             for(int j =i-k; j<=i+k; j++){
-                if(i-k>=0&&i+k<=100){
+                if(j>=0&&j<=100){
                     sum+=arr[j];
                 }
             }
