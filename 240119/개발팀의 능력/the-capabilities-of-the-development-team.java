@@ -28,6 +28,9 @@ public class Main {
                 
             }
         }
+        if(diff==Integer.MAX_VALUE){
+            diff = -1;
+        }
         System.out.print(diff);
         
     }
