@@ -17,8 +17,8 @@ public class Main {
                         if(i!=j&&i!=k&&i!=l&&j!=k&&j!=l&&k!=l){
                             if(makeTeam(i,j,k,l,arr)==-1){
                                 diff = Integer.MAX_VALUE;
-                            }
-                            diff = Math.min(diff, makeTeam(i,j,k,l,arr));
+                            }else{diff = Math.min(diff, makeTeam(i,j,k,l,arr));}
+                            
                             
                         }
                         
@@ -47,14 +47,11 @@ public class Main {
         int maxT= Math.max(sum1,sum2);
         maxT = Math.max(maxT,sum3);
         if(Math.abs(minT-maxT)==0){
-            System.out.println("sum1"+sum1+" "+sum2+" "+sum3);
-        }
-        if(sum3==sum1||sum3==sum2||sum2==sum1){
-            if(sum3==sum1&&sum3==sum2&&sum2==sum1){
-                return Integer.MAX_VALUE;
-            }
             return -1;
-        }else return Math.abs(minT-maxT);
+        }if(sum3==sum1||sum3==sum2||sum2==sum1){
+                return Integer.MAX_VALUE;
+        }
+        return Math.abs(minT-maxT);
         
         
     }
