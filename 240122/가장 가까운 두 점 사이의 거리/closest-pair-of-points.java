@@ -9,15 +9,19 @@ public class Main {
             x[i]=sc.nextInt();
             y[i]=sc.nextInt();
         }
-        int xMin =Integer.MAX_VALUE;
-        int yMin =Integer.MAX_VALUE;
+        int distX =0;
+        int distY =0;
+        int minDist=Integer.MAX_VALUE;
+        int minResult=Integer.MAX_VALUE;
         for(int i=0; i<n; i++){
             for(int j =0; j<n; j++){
                 if(i==j) continue;
-                xMin = Math.min(Math.abs(x[i]-x[j]),xMin);
-                yMin = Math.min(Math.abs(y[i]-y[j]),yMin);
+                distX = Math.abs(x[i]-x[j]);
+                distY = Math.abs(y[i]-y[j]);
+                minDist = Math.min(minDist, distX*distX+distY*distY);
             }
+                minResult = Math.min(minDist,minResult);
         }
-        System.out.println(xMin*xMin+yMin*yMin);
+        System.out.println(minResult);
     }
 }
