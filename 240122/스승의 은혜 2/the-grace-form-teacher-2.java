@@ -27,9 +27,11 @@ public class Main {
                     sum-=list.get(j);
                     count--;
                     sum+=list.get(j)/2;
-                    coupon=true;
                     if(sum>m) break;
+                    else{
+                    coupon=true;
                     count++;
+                    }
                 } 
             }
             max = Math.max(count, max);
