@@ -12,7 +12,8 @@ public class Main {
         int xMin =Integer.MAX_VALUE;
         int yMin =Integer.MAX_VALUE;
         for(int i=0; i<n; i++){
-            for(int j =i+1; j<n; j++){
+            for(int j =0; j<n; j++){
+                if(i==j) continue;
                 xMin = Math.min(Math.abs(x[i]-x[j]),xMin);
                 yMin = Math.min(Math.abs(y[i]-y[j]),yMin);
             }
