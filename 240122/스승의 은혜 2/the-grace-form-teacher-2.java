@@ -27,7 +27,10 @@ public class Main {
                     sum-=list.get(j);
                     count--;
                     sum+=list.get(j)/2;
-                    if(sum>m) break;
+                    if(sum>m) {
+                        sum-=list.get(j)/2;
+                        break;
+                    }
                     else{
                     coupon=true;
                     count++;
