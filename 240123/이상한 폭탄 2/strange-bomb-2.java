@@ -26,7 +26,9 @@ public class Main {
                     max = Math.max(max, l);
                 }
             }
-            list.add(max);
+            if(max!=Integer.MIN_VALUE){
+                list.add(max);
+            }
         }
         if(list.size()==0){
             System.out.print(-1);
