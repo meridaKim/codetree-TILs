@@ -11,13 +11,16 @@ public class Main {
             x2[i] = sc.nextInt();
         }
         result =0;
-        for(int i=0; i<n; i++){
+        if(n!=4){
+            for(int i=0; i<n; i++){
             for(int j =i+1; j<n; j++){
                 for(int k = j+1; k<n; k++){
                     count(n,i,j,k,x1,x2);
                 }
             }
         }
+        }else result = 4;
+        
         System.out.print(result);
     }
     public static void count(int n,int i, int j, int k, int[] x1, int [] x2){
@@ -26,8 +29,6 @@ public class Main {
             for(int p=0; p<n; p++){
                 if(l==p||p==j||p==i||p==k) continue;
                 if(x2[l]<x1[p]) result++;
-                if(n==4) {result++;
-                break;}
             }
         }
     }
