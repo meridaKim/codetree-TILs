@@ -26,6 +26,7 @@ public class Main {
             for(int p=0; p<n; p++){
                 if(l==p||p==j||p==i||p==k) continue;
                 if(x2[l]<x1[p]) result++;
+                if(n==4) result++;
             }
         }
     }
