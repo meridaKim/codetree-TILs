@@ -67,6 +67,6 @@ public class Main {
             max = Math.max(count, max);
             count=0;
         }
-        System.out.print(max);
+        System.out.print(max+1);
     }
 }
