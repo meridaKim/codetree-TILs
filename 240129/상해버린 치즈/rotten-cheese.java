@@ -42,7 +42,7 @@ public class Main {
                         cheeze = arr[i][1];
                         time = srr[k][1];
                         for(int j =0; j<D; j++){
-                            if(cheeze==arr[j][1]&&time>arr[j][2]){
+                            if(cheeze==arr[j][1]&&time>=arr[j][2]){
                                 list.get(cheeze-1).add(arr[j][0]);
                             }
                         }
